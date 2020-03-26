@@ -9,5 +9,13 @@
         <module name="TestBot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="telegrambots" target="11" />
+      <module name="telegrambots-abilities" target="11" />
+      <module name="telegrambots-chat-session-bot" target="11" />
+      <module name="telegrambots-meta" target="11" />
+      <module name="telegrambots-spring-boot-starter" target="11" />
+      <module name="telegrambotsextensions" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
