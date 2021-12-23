@@ -1,0 +1,48 @@
+package API.Rotation;
+import org.junit.Test;
+
+public class TestTestStudyWTF {
+    String ver1 = "191.168.0.13.201";
+//    String ver2 = "191.169.0.13.201";
+    String ver2 = "191.168.0.013.2023";
+//    String ver2 = "191.168.0.013.202";
+    int a = 0;
+
+    public void whatVersionLatest(String ver1, String ver2) {
+        String[] arrVers1 = ver1.split("\\.");
+        String[] arrVers2 = ver2.split("\\.");
+
+        System.out.println(arrVers1.length + " : " + arrVers2.length);
+
+        if (arrVers1.length == arrVers2.length) {
+            System.out.println("Length is similar lets check value");
+        }
+        for (int i = 0; i < arrVers1.length; i++) {
+            System.out.print(arrVers1[i] + " vs " + arrVers2[i] + " - ");
+
+            int x1 = Integer.valueOf(arrVers1[i]);
+            int x2 = Integer.valueOf(arrVers2[i]);
+
+            if (Integer.valueOf(arrVers1[i]) > Integer.valueOf(arrVers2[i])) {
+                a = 1;
+                break;
+            }
+            if (Integer.valueOf(arrVers1[i]) < Integer.valueOf(arrVers2[i])) {
+                a = -1;
+                break;
+            }
+            if (x1 == x2) {
+                a = 0;
+            }
+        }
+        if (a == 0) System.out.println("Version equals");
+        if (a > 0)  System.out.println("First bigger");
+        if (a < 0)  System.out.println("Second bigger");
+        System.out.println(a);
+    }
+    @Test
+    public void whatVersionLatest() {
+        whatVersionLatest(ver1, ver2);
+    }
+}
+
